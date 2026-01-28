@@ -40,7 +40,6 @@ export default function Header() {
             alt="GreenHabit AI"
             className="topbar-logo"
             onError={(e) => {
-              // @ts-ignore
               e.currentTarget.src = "/images/logo.svg";
             }}
           />

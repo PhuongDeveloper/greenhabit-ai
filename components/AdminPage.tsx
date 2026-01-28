@@ -97,7 +97,7 @@ export default function AdminPage() {
       const userIds = Array.from(new Set(r.map((rr: any) => rr.userId).filter(Boolean)));
       const map: Record<string, any> = {};
       await Promise.all(userIds.map(async (uid: string) => {
-        try { const u = await db.getUserByUid(uid); if (u) map[uid] = u; } catch { }
+        try { const u = await db.getUserByUid(uid); if (u) map[uid] = u; } catch { /* ignore */ }
       }));
       setUsersMap(map);
     } catch (err) { console.error("loadLists error", err); }
@@ -130,6 +130,7 @@ export default function AdminPage() {
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
 
+      // eslint-disable-next-line no-constant-condition
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;

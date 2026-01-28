@@ -202,7 +202,8 @@ export async function POST(req: Request) {
 }
 
 // GET: Quét accounts cần merge (điểm=0 hoặc email/tên trùng)
-export async function GET(req: Request) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function GET(_req: Request) {
     try {
         const db = getDb();
 

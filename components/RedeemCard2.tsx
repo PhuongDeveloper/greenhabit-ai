@@ -3,7 +3,6 @@ import { useState } from "react";
 import RedeemModal from "./RedeemModal";
 
 export default function RedeemCard2({ provider, value, pointsRequired, availableCount = 0 }: { provider: string; value: number; pointsRequired: number; availableCount?: number }) {
-  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
   function handleRedeem() {
@@ -49,8 +48,8 @@ export default function RedeemCard2({ provider, value, pointsRequired, available
       <button
         onClick={handleRedeem}
         className="btn-redeem"
-        disabled={loading || availableCount === 0}
-        aria-disabled={loading || availableCount === 0}
+        disabled={availableCount === 0}
+        aria-disabled={availableCount === 0}
         aria-label={`Quy đổi Thẻ ${valueDisplay}`}
       >
         {availableCount === 0 ? "Hết hàng" : (

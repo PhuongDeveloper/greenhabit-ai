@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { addCardToFirestore } from "../../../../lib/db";
+import { addCardToFirestore } from "../../../lib/db";
 
 export async function POST(req: Request) {
   try {

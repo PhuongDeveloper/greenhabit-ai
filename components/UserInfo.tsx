@@ -27,7 +27,6 @@ export default function UserInfo() {
             alt="avatar"
             className="avatar"
             onError={(e) => {
-              // @ts-ignore
               e.currentTarget.src = "/images/user.svg";
             }}
           />

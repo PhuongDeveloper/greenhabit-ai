@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
 import { getDb } from '../../../lib/firebase';
 import { collection, getDocs, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 // API lưu snapshot với progress - gọi từ client
-export async function POST(req: Request) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function POST(_req: Request) {
     const encoder = new TextEncoder();
 
     const stream = new ReadableStream({
